@@ -1,4 +1,4 @@
-require('dotenv').config(); //to load environment file
+// require('dotenv').config(); //to load environment file
 
 const path = require('path'); // To use out of folder files also(folder files other than current folder)
 const fs = require('fs');
