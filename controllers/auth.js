@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
 const { validationResult } = require('express-validator');  //   /check - sub package of express-validator
-require('dotenv').config();
+// require('dotenv').config();
 
 const transporter = nodemailer.createTransport( //authentication and service name
   {
