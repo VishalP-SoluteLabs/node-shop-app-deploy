@@ -1,4 +1,4 @@
-require('dotenv').config(); //to load environment file
+// require('dotenv').config(); //to load environment file
 
 const path = require('path'); // To use out of folder files also(folder files other than current folder)
 const fs = require('fs');
@@ -28,8 +28,8 @@ const store = new MongoDBStore({ //mongoDB store constructor
 
 const csrfProtection = csrf();
 
-const privateKey = fs.readFileSync('server.key');
-const certificate = fs.readFileSync('server.cert');
+// const privateKey = fs.readFileSync('server.key');
+// const certificate = fs.readFileSync('server.cert');
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -156,7 +156,7 @@ mongoose
   //   })
   // })
   // .catch(err => console.log(err))
-  
+
     app.listen(process.env.PORT || 3000, (err) => { //process.env.PORT:- it will fetch the variables stored in '.env' file (for this line the PORT variable)
       if (!err) {
         console.log(`Server listening at Port: ${process.env.PORT || 3000}`);
