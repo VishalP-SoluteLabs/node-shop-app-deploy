@@ -12,7 +12,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
 const multer = require('multer');
-const helmet = require('helmet');
+// const helmet = require('helmet');
 const compression = require('compression');
 const morgan = require('morgan');
 
@@ -28,8 +28,8 @@ const store = new MongoDBStore({ //mongoDB store constructor
 
 const csrfProtection = csrf();
 
-const privateKey = fs.readFileSync('server.key');
-const certificate = fs.readFileSync('server.cert');
+// const privateKey = fs.readFileSync('server.key');
+// const certificate = fs.readFileSync('server.cert');
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -63,7 +63,7 @@ const accessLogStream = fs.createWriteStream(
    { flags: 'a'}    //flags: 'a' means new data will append, not overwrite existing file
 ) 
 
-app.use(helmet());       //For securing headers
+// app.use(helmet());       //For securing headers
 app.use(compression());  //for compressing files for downloads such as css, etc not images though
 app.use(morgan('combined', { stream: accessLogStream }));       //for logging data (to know what's going on the server)
 
