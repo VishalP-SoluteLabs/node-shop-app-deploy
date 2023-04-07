@@ -55,11 +55,11 @@ app.set('view engine', 'ejs'); // Set the view engine as PUG here
 app.set('views', 'views'); // Telling which folder to be considered as 'views'(in this case we have named as views only)
 
 
-app.get("/", (req, res) => {
-  res
-      .set("Content-Security-Policy", "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
-      .send("<html><head></head><body></body></html>");
-})
+// app.get("/", (req, res) => {
+//   res
+//       .set("Content-Security-Policy", "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
+//       .send("<html><head></head><body></body></html>");
+// })
 
 
 
