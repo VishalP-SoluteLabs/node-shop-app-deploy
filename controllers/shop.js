@@ -97,7 +97,7 @@ exports.getProductDetails = (req, res, next) => {
 
 
 exports.getCart = (req, res, next) => {
-
+//  console.log(req.user)
   req.user
     .populate('cart.items.productId')
     .then(user => {
@@ -120,7 +120,7 @@ exports.postCart = (req, res, next) => {
   const prodId = req.body.productId;
   Product.findById(prodId)
     .then(product => {
-      //console.log(product);
+      console.log('AAAAAAAAAAAAAAAAAA', req.user);
       return req.user.addToCart(product);
     }).then(result => {
       //console.log(result);
