@@ -54,6 +54,15 @@ const fileFilter = (req, file, cb) => {
 app.set('view engine', 'ejs'); // Set the view engine as PUG here
 app.set('views', 'views'); // Telling which folder to be considered as 'views'(in this case we have named as views only)
 
+
+app.get("/", (req, res) => {
+  res
+      .set("Content-Security-Policy", "default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'")
+      .send("<html><head></head><body></body></html>");
+})
+
+
+
 const adminRoutes = require('./Routes/admin.js');
 const shopRoutes = require('./Routes/shop.js');
 const authRoutes = require('./Routes/auth.js');
