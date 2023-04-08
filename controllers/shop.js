@@ -6,7 +6,7 @@ const stripe = require('stripe')(`${process.env.STRIPE_PVT_KEY}`);
 const Product = require('../models/product.js');
 const Order = require('../models/order.js');
 
-const ITEMS_PER_PAGE = 1;
+const ITEMS_PER_PAGE = 2;
 
 exports.getIndex = (req, res, next) => {
   const page = +req.query.page || 1;
@@ -101,7 +101,9 @@ exports.getCart = (req, res, next) => {
   req.user
     .populate('cart.items.productId')
     .then(user => {
+      console.log('ABABABABAB')
       const products = user.cart.items;
+      console.log(products)
       res.render('shop/cart', {
         path: '/cart',
         pageTitle: 'Your Cart',
