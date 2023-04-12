@@ -1,5 +1,5 @@
 const fs = require('fs');
-require('dotenv').config(); //to load environment file
+// require('dotenv').config(); //to load environment file
 
 const path = require('path');
 const PDFDocument = require('pdfkit');
