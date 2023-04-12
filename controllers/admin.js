@@ -2,6 +2,7 @@ const Product = require('../models/product.js');
 const mongodb = require('mongodb');
 const mongoose = require('mongoose');
 const { validationResult } = require('express-validator');
+require('dotenv').config();
 
 const fileHelper = require('../util/file.js');
 

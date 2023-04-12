@@ -1,7 +1,9 @@
 const fs = require('fs');
+require('dotenv').config(); //to load environment file
+
 const path = require('path');
 const PDFDocument = require('pdfkit');
-const stripe = require('stripe')(`pk_test_51MsNYxSHWhgqBRI1KnyInzsDTX0CE0iPb6lAmeoetMYZWb5JGaMqSeJdcMVaJ2y17km6qJ6u2qBviZ4t3vBnI3g000frBjGs7P`);
+const stripe = require('stripe')(`sk_test_51MsNYxSHWhgqBRI1lauaz0k5nVX4Mhfcz5WKTlicMonwqwYtTwf0b8SNkwqsLv8PVJ3tN3MqUvqqBik3TU8Bkxkq00G14Xlnn9`);
 
 const Product = require('../models/product.js');
 const Order = require('../models/order.js');
